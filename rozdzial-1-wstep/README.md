@@ -42,7 +42,7 @@ Zaimplementuj komponent `MemberCard` ze stanem i typowaniem.
    }
    ```
 2. **Wyświetlanie danych:** Wyrenderuj przekazane w propsach wartości (w przypadku tablicy `skills` użyj `.map()`).
-3. **Zarządzanie stanem (Hooks):** Zaimplementuj hook `useState`. Dodaj w komponencie przycisk (np. "Zmień status"), który przełącza status kursanta (np. "Nieaktywny" 🔄 "Aktywny").
+3. **Zarządzanie stanem (Hooks):** Zaimplementuj hook `useState`. Dodaj w komponencie przycisk (np. "Zmień status"), który przełącza status kursanta ("Nieaktywny" 🔄 "Aktywny").
 
 ### Krok 3: Pull Request (Do repozytorium Solvro)
 1. Zapisz zmiany i utwórz commita:
@@ -53,7 +53,7 @@ Zaimplementuj komponent `MemberCard` ze stanem i typowaniem.
    ```
 2. Przejdź na GitHuba na stronę **swojego forka**. Kliknij **Compare & pull request**.
 3. Domyślnie PR otworzy się do głównego repozytorium Solvro – **zostaw to ustawienie**.
-4. W opisie PR koniecznie wpisz: `Związane z: https://github.com/Solvro/Solvro/issues/229` i utwórz zgłoszenie.
+4. Utwórz zgłoszenie.
 
 ---
 
@@ -79,7 +79,7 @@ Zaimplementuj komponent `ProjectCard` (Karta Projektu).
    }
    ```
 2. **Logika:** Wyrenderuj dane z propsów. Ponownie użyj `.map()` dla tablicy `technologies`.
-3. **Stan:** Dodaj przycisk zmieniający status projektu wykorzystując `useState` (np. "W trakcie" 🔄 "Ukończony").
+3. **Stan:** Dodaj przycisk zmieniający status projektu wykorzystując `useState` ( "W trakcie" 🔄 "Ukończony").
 
 ### Krok 3: Pull Request na SWOJE repozytorium
 1. Zapisz i wypchnij zmiany:
@@ -90,8 +90,7 @@ Zaimplementuj komponent `ProjectCard` (Karta Projektu).
    ```
 2. Przejdź na GitHuba na stronę swojego forka i kliknij **Compare & pull request**.
 3. ⚠️ **BARDZO WAŻNE:** Zmień **`base repository`** (rozwijana lista po lewej stronie na górze) na **swojego forka** (`TWOJ_USERNAME/Nazwa-Repo`). Dzięki temu Pull Request otworzy się na Twoim koncie i nie zaśmieci głównego repozytorium.
-4. W opisie PR podlinkuj główne Issue: `Związane z: https://github.com/Solvro/Solvro/issues/229`.
-5. Podeślij link do swojego otwartego Pull Requesta na naszym kanale, abyśmy mogli sprawdzić Twoje zadanie domowe!
+4. Podeślij link do swojego otwartego Pull Requesta na naszym kanale, abyśmy mogli sprawdzić Twoje zadanie domowe!
 
 ---
 

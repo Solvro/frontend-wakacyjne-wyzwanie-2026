@@ -1,6 +1,6 @@
 import { Sun } from 'lucide-react'
 import './App.css'
-import { MemberCard } from './components/MemberCard'
+
 function App() {
   
 
@@ -13,7 +13,6 @@ function App() {
       <main className='grid grid-cols-2 justify-center text-center gap-16 py-16 px-8'>
         <section className='flex flex-col'>
           <h2>Zadanie warsztatowe</h2>
-          <MemberCard name="Ksawery" role='Frontend Developer' skills={["hajs", "jaksa"]}/>
         </section>
         <section className='flex justify-center items-center border border-gray-200 rounded-lg p-16 shadow-sm'>
           <h2>Zadanie domowe</h2>
