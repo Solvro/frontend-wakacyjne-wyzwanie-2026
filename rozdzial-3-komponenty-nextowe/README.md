@@ -9,7 +9,12 @@ W tym rozdziale rozwiniemy `TeamMemberCard` z poprzedniego zadania, aby poznać 
 Twoim zadaniem jest ulepszenie komponentu `TeamMemberCard` z poprzedniego rozdziału o: `Image`, `Script`, `Link` oraz czcionkę z modułu `next/font`. Kod zgłosisz do Code Review za pomocą Pull Requesta na **swoje własne repozytorium** (forka).
 
 ### Krok 1: Przygotowanie pracy
-1. Upewnij się, że Twoje repozytorium z **Rozdziału 2** jest aktualne i masz wypchnięte zmiany.
+1. **Zsynchronizuj swojego forka** z głównym repozytorium:
+   - Wejdź na swój fork na GitHubie -> **Sync fork** -> **Update branch**.
+   - Pobierz zmiany:
+     ```bash
+     git pull origin main
+     ```
 2. Stwórz nową gałąź dla zadania:
    ```bash
    git switch -c feat/imie-nazwisko-komponenty
@@ -50,4 +55,4 @@ Twoim zadaniem jest ulepszenie komponentu `TeamMemberCard` z poprzedniego rozdzi
 ---
 
 ## 📚 Materiały do rozdziału
-* [Prezentacja ze spotkania](https://solvro.pwr.edu.pl/pl/)
+* [Prezentacja ze spotkania](https://docs.google.com/presentation/d/1ZQp8qx92xkStHMkYuGGjarnHT1QSFHxb/edit?usp=sharing&ouid=103417303567841307482&rtpof=true&sd=true)
