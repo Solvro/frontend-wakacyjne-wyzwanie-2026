@@ -43,7 +43,7 @@ Zaimplementuj komponent `TeamMemberCard` (Wizytówka Członka Zespołu).
    }
 ```
 2. **Zawartość:** komponent powinien wyświetlać avatar (może być placeholder), imię i nazwisko, stanowisko, krótkie bio oraz listę umiejętności (w przypadku tablicy `skills` użyj `.map()`).
-3. **Stylowanie:** wykorzystaj wyłącznie klasy narzędziowe Tailwind (bez własnego pliku CSS) – zadbaj o czytelną hierarchię wizualną).
+3. **Stylowanie:** wykorzystaj wyłącznie klasy narzędziowe Tailwind (bez własnego pliku CSS) – zadbaj o czytelną hierarchię wizualną i korzystaj tylko z gotowych klas kolorów.
 4. **Responsywność:** karta powinna zmieniać układ w zależności od szerokości ekranu (np. na mobile elementy w kolumnie, na desktopie obok siebie) – wykorzystaj prefiksy `sm:`/`md:`/`lg:`.
 ### Krok 4: Wyczyszczenie domyślnego widoku
 1. Otwórz `src/app/page.tsx` i usuń domyślną zawartość wygenerowaną przez Next.js (logo, teksty, linki itd.).
@@ -54,7 +54,7 @@ Zaimplementuj komponent `TeamMemberCard` (Wizytówka Członka Zespołu).
    ```bash
    git add .
    git commit -m "feat: first Next.js project"
-   git push origin feat/imie-nazwisko-projekt
+   git push origin feat/imie-nazwisko-pierwszy-projekt
    ```
 2. Przejdź na GitHuba na stronę swojego forka i kliknij **Compare & pull request**.
 3. ⚠️ **BARDZO WAŻNE:** Zmień **`base repository`** (rozwijana lista po lewej stronie na górze) na **swojego forka** (`TWOJ_USERNAME/Nazwa-Repo`). Dzięki temu Pull Request otworzy się na Twoim koncie i nie zaśmieci głównego repozytorium.
