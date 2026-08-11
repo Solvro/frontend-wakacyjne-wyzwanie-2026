@@ -1,8 +1,17 @@
 import { Sun } from 'lucide-react'
+import { ProjectCard } from './ProjectCard'
 import './App.css'
 
 function App() {
-  
+  const myProject = {
+    title: "Wakacyjne Wyzwanie Frontend",
+    description: "Tworzenie projektu",
+    technologies: [
+      { id: "1", name: "React" },
+      { id: "2", name: "TypeScript" },
+      
+    ],
+  };
 
   return (
     <>
@@ -13,6 +22,12 @@ function App() {
       <main className='flex justify-center items-center text-center py-16 px-8'>
         <section className='flex flex-col justify-center items-center border border-gray-200 rounded-lg p-16 shadow-sm w-full max-w-3xl'>
           <h2>Zadanie domowe</h2>
+
+          <ProjectCard
+            title = {myProject.title}
+            description ={myProject.description}
+            technologies = {myProject.technologies}
+            />
 
         </section>
       </main>
