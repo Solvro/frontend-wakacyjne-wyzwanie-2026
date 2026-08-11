@@ -1,19 +1,3 @@
-# Rozdział 4 - Routing
-
-Dogłębne omówienie systemu routingu w Next.js (App Router).
-
-## Zakres
-
-- Układanie plików i folderów w App Routerze
-- `layout`, `page`, `loading`, `error`
-- Parallel routes i inne zaawansowane wzorce routingu
-
-## Materiały
-
-Materiały (prezentacja, nagranie, zadanie) do tego rozdziału umieszczamy w tym folderze.
-
-Issue: https://github.com/Solvro/Solvro/issues/232
-
 # ☀️ Wakacyjne Wyzwanie - Rozdział 4: Routing
 
 Witamy w pierwszym rozdziale praktycznym! Wprowadzamy tutaj podstawowe narzędzia i technologie, z którymi będziemy pracować przez resztę kursu: **Git**, **TypeScript** oraz **React**.
@@ -33,43 +17,32 @@ Zanim zaczniesz, upewnij się, że masz zainstalowane i skonfigurowane:
 
 ## 🏠 Zadanie domowe (ProjectCard)
 
-Twoim zadaniem jest przejście przez proces deweloperski (zrobienie forka), napisanie otypowanego komponentu wizytówki w React i zgłoszenie kodu do Code Review za pomocą Pull Requesta **wyłącznie na swoje własne repozytorium** (forka).
+Twoim zadaniem jest rozbudowanie aplikacji w App Routerze o strukturę folderów i widoków demonstrującą konwencje plików specjalnych oraz zaawansowane wzorce routingu w Next.js. Kod zgłosisz do Code Review za pomocą Pull Requesta na swoje własne repozytorium (forka).
 
-### Krok 1: Organizacja pracy (Git & Fork)
+### Krok 1: Przygotowanie pracy
 
-1. Wejdź na stronę tego repozytorium i kliknij przycisk **Fork** w prawym górnym rogu, aby utworzyć jego kopię na swoim koncie GitHub.
-2. Sklonuj **swojego forka** na komputer:
+1. **Zsynchronizuj swojego forka** z głównym repozytorium:
+   - Wejdź na swój fork na GitHubie -> **Sync fork** -> **Update branch**.
+   - Pobierz zmiany:
+     ```bash
+     git pull origin main
+     ```
+2. Stwórz nową gałąź dla zadania:
    ```bash
-   git clone https://github.com/TWOJ_USERNAME/NAZWA_REPOZYTORIUM.git
-   ```
-3. Przejdź do folderu projektu i stwórz nową gałąź (branch) dla swojego zadania:
-   ```bash
-   cd NAZWA_REPOZYTORIUM
-   git switch -c feat/imie-nazwisko-zadanie
+   git switch -c feat/imie-nazwisko-routing
    ```
 
-### Krok 2: Implementacja (React & TypeScript)
+### Krok 2: Implementacja
 
-Zaimplementuj komponent `ProjectCard` (Karta Projektu).
+1. **Układ stron i nawigacja** Utwórz dedykowany układ (`layout.tsx`) dla wybranej części aplikacji. Dodaj w nim pasek nawigacyjny z komponentem `Link` z `next/link`, który pozwala przełączać się między podstronami bez pełnego przeładowania strony.
 
-1. **Typowanie:**
+2. **Obsługa ładowania i błędów** Stwórz komponent `loading.tsx` z komponentem szkieletowym lub wskaźnikiem ładowania. Dodaj komponent `error.tsx` (pamiętaj o `'use client'`), który obsłuży ewentualne błędy i zaoferuje przycisk do ponownego spróbowania (reset()).
 
-   ```typescript
-   interface Technology {
-     id: string; // np. UUID lub unikalny hash
-     name: string;
-   }
+3. **Ścieżki dynamiczne** Stwórz dynamiczny segment routingu (np. `app/users/[id]/page.tsx`). Pobierz parametry z `params` i obsłuż przypadek, gdy zasób o danym ID nie istnieje, wywołując funkcję `notFound()` i przygotowując widok `not-found.tsx`.
 
-   interface ProjectCardProps {
-     title: string;
-     description: string;
-     technologies: Technology[];
-   }
-   ```
-
-2. **Logika:** Wyrenderuj dane z propsów. Pokaż te dane w komponencie za pomocą **interpolacji** (używając nawiasów klamrowych `{}`). Do wyświetlenia listy technologii użyj metody `.map()` dla tablicy `technologies`.
-3. **Stan:** Dodaj przycisk zmieniający status projektu wykorzystując hook `useState` ("W trakcie" 🔄 "Ukończony").
-4. **Wyświetlenie w aplikacji:** Zaimportuj stworzony komponent `ProjectCard` i wyrenderuj go w głównym komponencie aplikacji (najczęściej plik `App.tsx`), przekazując mu przykładowe dane przez propsy.
+4. **Zaawansowany wzorzec routingu (Parallel Routes / Intercepting Routes)** Zaimplementuj jeden z zaawansowanych wzorców (lub oba 🥰):
+   - Parallel Routes (`@slot`): Wyświetl dwa niezależne widoki równolegle w jednym layoucie.
+   - Intercepting Routes (`(.)folder`): Zaimplementuj otwieranie szczegółów (np. profilu) w modalu po kliknięciu w link z zachowaniem unikalnego adresu URL.
 
 ### Krok 3: Pull Request na SWOJE repozytorium
 
@@ -87,4 +60,4 @@ Zaimplementuj komponent `ProjectCard` (Karta Projektu).
 
 ## 📚 Materiały do rozdziału
 
-- [Prezentacja ze spotkania](https://docs.google.com/presentation/d/1UE3VfjRkmJKT0ete5Tbiq7O8PIiqlJ6E/edit?usp=sharing&ouid=118332872889290210642&rtpof=true&sd=true)
+- [Prezentacja ze spotkania]()
