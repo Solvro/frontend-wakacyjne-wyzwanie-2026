@@ -24,7 +24,7 @@ Twoim zadaniem jest utworzenie od zera nowego projektu Next.js, a następnie zbu
      ```
 2. Stwórz nową gałąź dla zadania:
    ```bash
-   git switch -c feat/imie-nazwisko-komponenty
+   git switch -c feat/imie-nazwisko-pierwszy-projekt
    ```
  
 ### Krok 2: Utworzenie projektu
