@@ -1,6 +1,6 @@
 # ☀️ Wakacyjne Wyzwanie - Rozdział 4: Routing
 
-Witamy w pierwszym rozdziale praktycznym! Wprowadzamy tutaj podstawowe narzędzia i technologie, z którymi będziemy pracować przez resztę kursu: **Git**, **TypeScript** oraz **React**.
+Witamy w czwartym rozdziale praktycznym! W tym zadaniu rozbudujemy komponent `TeamMemberCard` z poprzedniej lekcji w pełnoprawną aplikację. Poznasz konwencje specjalnych plików w **Next.js App Router** oraz zaawansowane wzorce routingu.
 
 Plik ten zawiera instrukcje do **Zadania domowego** (do samodzielnego treningu).
 
@@ -15,9 +15,9 @@ Zanim zaczniesz, upewnij się, że masz zainstalowane i skonfigurowane:
 
 ---
 
-## 🏠 Zadanie domowe (ProjectCard)
+## 🏠 Zadanie domowe
 
-Twoim zadaniem jest rozbudowanie aplikacji w App Routerze o strukturę folderów i widoków demonstrującą konwencje plików specjalnych oraz zaawansowane wzorce routingu w Next.js. Kod zgłosisz do Code Review za pomocą Pull Requesta na swoje własne repozytorium (forka).
+W poprzednich zadaniach stworzyłeś komponent wizytówki `TeamMemberCard`, więc czas zrobić z niego katalog zespołu, wykorzystując routing Nextjs'a. Kod zgłosisz do Code Review za pomocą Pull Requesta na **swoje własne repozytorium** (forka).
 
 ### Krok 1: Przygotowanie pracy
 
@@ -34,23 +34,23 @@ Twoim zadaniem jest rozbudowanie aplikacji w App Routerze o strukturę folderów
 
 ### Krok 2: Implementacja
 
-1. **Układ stron i nawigacja** Utwórz dedykowany układ (`layout.tsx`) dla wybranej części aplikacji. Dodaj w nim pasek nawigacyjny z komponentem `Link` z `next/link`, który pozwala przełączać się między podstronami bez pełnego przeładowania strony.
+1. **Układ stron i nawigacja** Utwórz dedykowany root layout i dodaj w nim pasek nawigacyjny z komponentem `Link` z `next/link`, który pozwala przełączać się między podstronami (np. strona główna i storna z listą zespołu).
 
-2. **Obsługa ładowania i błędów** Stwórz komponent `loading.tsx` z komponentem szkieletowym lub wskaźnikiem ładowania. Dodaj komponent `error.tsx` (pamiętaj o `'use client'`), który obsłuży ewentualne błędy i zaoferuje przycisk do ponownego spróbowania (reset()).
+2. **Obsługa ładowania i błędów** Stwórz komponent `loading.tsx` - dla symulowania ładowania dannych możesz skorzystać z `setTimeout(timeoutMs)`. Dodaj komponent `error.tsx` (pamiętaj o `'use client'`), który obsłuży ewentualne błędy i zaoferuje przycisk do ponownego spróbowania (reset()) - można go przetestować za pomocą `throw new Error()`.
 
-3. **Ścieżki dynamiczne** Stwórz dynamiczny segment routingu (np. `app/users/[id]/page.tsx`). Pobierz parametry z `params` i obsłuż przypadek, gdy zasób o danym ID nie istnieje, wywołując funkcję `notFound()` i przygotowując widok `not-found.tsx`.
+3. **Ścieżki dynamiczne** Stwórz dynamiczny segment routingu (np. osobna podstrona dla każdego członka zespołu). Pobierz parametry z `params` i obsłuż przypadek, gdy zasób o danym ID nie istnieje, wywołując funkcję `notFound()` i przygotowując widok `not-found.tsx`.
 
 4. **Zaawansowany wzorzec routingu (Parallel Routes / Intercepting Routes)** Zaimplementuj jeden z zaawansowanych wzorców (lub oba 🥰):
-   - Parallel Routes (`@slot`): Wyświetl dwa niezależne widoki równolegle w jednym layoucie.
-   - Intercepting Routes (`(.)folder`): Zaimplementuj otwieranie szczegółów (np. profilu) w modalu po kliknięciu w link z zachowaniem unikalnego adresu URL.
+   - Parallel Routes (`@slot`): Wyświetl dwa niezależne widoki równolegle w jednym layoucie, np. lista członków oraz ogólne statystki zespołu.
+   - Intercepting Routes (`(.)folder`): Zaimplementuj otwieranie szczegółów członka zespołu w oknie modalnym po kliknięciu w jego kartę na liście, zachowując unikalny URL (np. `/team/123`). Przy odświeżeniu strony pod tym adresem użytkownik powinien zobaczyć pełnowymiarową podstronę profilu.
 
 ### Krok 3: Pull Request na SWOJE repozytorium
 
 1. Zapisz i wypchnij zmiany:
    ```bash
    git add .
-   git commit -m "feat: add ProjectCard component"
-   git push origin feat/imie-nazwisko-zadanie
+   git commit -m "feat: complete chapter 4"
+   git push origin feat/imie-nazwisko-routing
    ```
 2. Przejdź na GitHuba na stronę swojego forka i kliknij **Compare & pull request**.
 3. ⚠️ **BARDZO WAŻNE:** Zmień **`base repository`** (rozwijana lista po lewej stronie na górze) na **swojego forka** (`TWOJ_USERNAME/Nazwa-Repo`). Dzięki temu Pull Request otworzy się na Twoim koncie i nie zaśmieci głównego repozytorium.
