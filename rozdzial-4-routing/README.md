@@ -60,4 +60,4 @@ W poprzednich zadaniach stworzyłeś komponent wizytówki `TeamMemberCard`, wię
 
 ## 📚 Materiały do rozdziału
 
-- [Prezentacja ze spotkania]()
+- [Prezentacja ze spotkania](https://docs.google.com/presentation/d/1Qs9TwkT938JYYfZ-pV7C_YmaLz7Gkvrz/edit?usp=drive_link&ouid=103985751954598875199&rtpof=true&sd=true)
