@@ -42,7 +42,7 @@ W tym zadaniu przygotowaliśmy dla ciebie komponenty `UserProfileCard` i `UserPr
 
 4. **Zaawansowany wzorzec routingu (Parallel Routes / Intercepting Routes)** Zaimplementuj jeden z zaawansowanych wzorców (lub oba 🥰):
    - Parallel Routes (`@slot`): Wyświetl dwa niezależne widoki równolegle w jednym layoucie, np. lista użytkowników oraz statystyka miłośników pizzy.
-   - Intercepting Routes (`(.)folder`): Zaimplementuj otwieranie szczegółów użytkownika w oknie modalnym po kliknięciu w jego kartę na liście, zachowując unikalny URL (np. `/team/123`). Przy odświeżeniu strony pod tym adresem musimy zobaczyć pełnowymiarową podstronę profilu.
+   - Intercepting Routes (`(.)folder`): Zaimplementuj otwieranie szczegółów użytkownika w oknie modalnym po kliknięciu w jego kartę na liście, zachowując unikalny URL (np. `/users/123`). Przy odświeżeniu strony pod tym adresem musimy zobaczyć pełnowymiarową podstronę profilu.
 
 ### Krok 3: Pull Request na SWOJE repozytorium
 
