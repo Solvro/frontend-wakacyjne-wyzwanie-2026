@@ -17,7 +17,7 @@ Zanim zaczniesz, upewnij się, że masz zainstalowane i skonfigurowane:
 
 ## 🏠 Zadanie domowe
 
-W poprzednich zadaniach stworzyłeś komponent wizytówki `TeamMemberCard`, więc czas zrobić z niego katalog zespołu, wykorzystując routing Nextjs'a. Kod zgłosisz do Code Review za pomocą Pull Requesta na **swoje własne repozytorium** (forka).
+W tym zadaniu przygotowaliśmy dla ciebie komponenty `UserProfileCard` i `UserProfileList`, więc czas zrobić z nich katalog użytkowników, wykorzystując routing Nextjs'a. Kod zgłosisz do Code Review za pomocą Pull Requesta na **swoje własne repozytorium** (forka).
 
 ### Krok 1: Przygotowanie pracy
 
@@ -34,15 +34,15 @@ W poprzednich zadaniach stworzyłeś komponent wizytówki `TeamMemberCard`, wię
 
 ### Krok 2: Implementacja
 
-1. **Układ stron i nawigacja** Utwórz dedykowany root layout i dodaj w nim pasek nawigacyjny z komponentem `Link` z `next/link`, który pozwala przełączać się między podstronami (np. strona główna i storna z listą zespołu).
+1. **Układ stron i nawigacja** Utwórz dedykowany root layout i dodaj w nim pasek nawigacyjny z komponentem `Link` z `next/link`, który pozwala przełączać się między podstronami (np. strona główna i storna z listą użytkowników).
 
 2. **Obsługa ładowania i błędów** Stwórz komponent `loading.tsx` - dla symulowania ładowania dannych możesz skorzystać z `setTimeout(timeoutMs)`. Dodaj komponent `error.tsx` (pamiętaj o `'use client'`), który obsłuży ewentualne błędy i zaoferuje przycisk do ponownego spróbowania (reset()) - można go przetestować za pomocą `throw new Error()`.
 
-3. **Ścieżki dynamiczne** Stwórz dynamiczny segment routingu (np. osobna podstrona dla każdego członka zespołu). Pobierz parametry z `params` i obsłuż przypadek, gdy zasób o danym ID nie istnieje, wywołując funkcję `notFound()` i przygotowując widok `not-found.tsx`.
+3. **Ścieżki dynamiczne** Stwórz dynamiczny segment routingu (np. osobna podstrona dla każdego użytkownika). Pobierz parametry z `params` i obsłuż przypadek, gdy zasób o danym ID nie istnieje, wywołując funkcję `notFound()` i przygotowując widok `not-found.tsx`.
 
 4. **Zaawansowany wzorzec routingu (Parallel Routes / Intercepting Routes)** Zaimplementuj jeden z zaawansowanych wzorców (lub oba 🥰):
-   - Parallel Routes (`@slot`): Wyświetl dwa niezależne widoki równolegle w jednym layoucie, np. lista członków oraz ogólne statystki zespołu.
-   - Intercepting Routes (`(.)folder`): Zaimplementuj otwieranie szczegółów członka zespołu w oknie modalnym po kliknięciu w jego kartę na liście, zachowując unikalny URL (np. `/team/123`). Przy odświeżeniu strony pod tym adresem użytkownik powinien zobaczyć pełnowymiarową podstronę profilu.
+   - Parallel Routes (`@slot`): Wyświetl dwa niezależne widoki równolegle w jednym layoucie, np. lista użytkowników oraz statystyka miłośników pizzy.
+   - Intercepting Routes (`(.)folder`): Zaimplementuj otwieranie szczegółów użytkownika w oknie modalnym po kliknięciu w jego kartę na liście, zachowując unikalny URL (np. `/team/123`). Przy odświeżeniu strony pod tym adresem musimy zobaczyć pełnowymiarową podstronę profilu.
 
 ### Krok 3: Pull Request na SWOJE repozytorium
 
