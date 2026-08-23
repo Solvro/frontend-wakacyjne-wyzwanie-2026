@@ -56,6 +56,7 @@ export default function TeamMemberCard({
         </div>
         <Link
             href={"https://solvro.pwr.edu.pl"}
+            target="_blank"
             className="flex w-fit items-center gap-1.5 text-red-400 hover:text-red-300 hover:underline underline-offset-4 text-[11px] sm:text-sm font-bold transition-colors"
         >
           Dowiedz się więcej
