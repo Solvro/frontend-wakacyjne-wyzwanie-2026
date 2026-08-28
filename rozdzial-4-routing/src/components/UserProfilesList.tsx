@@ -1,7 +1,7 @@
 import { User } from "../types/User";
 import { UserProfileCard } from "./UserProfileCard";
 
-const MOCK_USERS: User[] = [
+export const MOCK_USERS: User[] = [
   {
     id: "1",
     name: "Alex Rivera",
