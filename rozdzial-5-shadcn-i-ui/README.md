@@ -12,7 +12,22 @@ Zanim zaczniesz, upewnij się, że masz zainstalowane i skonfigurowane:
 - Skonfigurowanego lokalnie [Gita](https://git-scm.com/)
 - Środowisko programistyczne (np. VS Code)
 - Zalogowanie do GitHuba w terminalu (np. poprzez CLI: `gh auth login` wybierając HTTPS)
-- Zainstalowaną bibliotekę Shadcn UI wraz z Tailwind [Instalacja](https://ui.shadcn.com/docs/installation)
+
+## 📦 Instalacja i konfiguracja Shadcn UI
+
+Biblioteka Shadcn UI nie jest zainstalowana domyślnie. Twoim pierwszym zadaniem jest jej poprawne skonfigurowanie.
+
+### 1. Inicjalizacja Shadcn
+Uruchom w terminalu komendę inicjalizującą i postępuj zgodnie z instrukcjami w terminalu (wybierz domyślne style i konfigurację dla Tailwind v4):
+```bash
+npx shadcn@latest init
+```
+
+### 2. Dodanie wymaganych komponentów
+Do zrealizowania zadań w tym rozdziale będą Ci potrzebne wybrane komponenty. Dodaj je do projektu za pomocą CLI:
+```bash
+npx shadcn@latest add card button avatar dialog empty spinner
+```
 
 ---
 
