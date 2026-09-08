@@ -104,3 +104,7 @@ Skonfiguruj klienta React Query (`QueryClientProvider`) w drzewie aplikacji (np.
 4. Podeślij link do swojego otwartego Pull Requesta na naszym kanale, abyśmy mogli sprawdzić Twoje zadanie domowe!
 
 ---
+
+## 📚 Materiały do rozdziału
+
+- [Prezentacja ze spotkania](https://docs.google.com/presentation/d/1wn2pwQK_3y_PJtQpL9rMdGoPUpwY2NKTIpO8_lkVkl0/edit?usp=sharing)
