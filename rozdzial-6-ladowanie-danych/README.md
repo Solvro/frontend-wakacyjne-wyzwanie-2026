@@ -1,6 +1,23 @@
-Podczas wykonywania całego zadania, wykorzystaj wiedzę zdobytą w poprzednich wykładach wakacyjnego wyzwania.
+# ☀️ Wakacyjne Wyzwanie - Rozdział 6: Ładowanie danych
+
+Witamy w szóstym rozdziale praktycznym! W tym zadaniu zapoznamy się z tematem pobierania danych i wyświetlaniu ich w naszej aplikacji.
+
+Plik ten zawiera instrukcje do Zadania domowego (do samodzielnego treningu).
+
+## 🛠️ Wymagania wstępne
+
+Zanim zaczniesz, upewnij się, że masz zainstalowane i skonfigurowane:
+
+- [Node.js](https://nodejs.org/) (zalecana wersja LTS)
+- Skonfigurowanego lokalnie [Gita](https://git-scm.com/)
+- Środowisko programistyczne (np. VS Code)
+- Zalogowanie do GitHuba w terminalu (np. poprzez CLI: `gh auth login` wybierając HTTPS)
 
 ---
+
+## 🏠 Zadanie domowe
+
+Podczas wykonywania całego zadania, wykorzystaj wiedzę zdobytą w poprzednich wykładach wakacyjnego wyzwania.
 
 ## 🔗 Dokumentacja API (DummyJSON)
 
