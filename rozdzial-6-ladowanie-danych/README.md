@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Podczas wykonywania całego zadania, wykorzystaj wiedzę zdobytą w poprzednich wykładach wakacyjnego wyzwania.
 
-## Getting Started
+---
 
-First, run the development server:
+## 🔗 Dokumentacja API (DummyJSON)
+
+### Krok 1: zapoznaj się z dokumentacją API
+
+Do realizacji zadania wykorzystamy darmowe, publiczne API [DummyJSON](https://dummyjson.com/docs/products):
+
+- **Pobranie produktów:** `GET https://dummyjson.com/products`
+- **Wyszukiwanie produktów:** `GET https://dummyjson.com/products/search?q={query}`
+- **Dodanie produktu:** `POST https://dummyjson.com/products/add`
+  - Body: `JSON.stringify({ title: string, price: number, category: string })`
+  - Headers: `'Content-Type': 'application/json'`
+
+---
+
+## 📦 Wymagania wstępne
+
+### Krok 2: zainstaluj potrzebne biblioteki
+
+Zainstaluj bibliotekę TanStack Query w swoim projekcie:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install @tanstack/react-query
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Skonfiguruj klienta React Query (`QueryClientProvider`) w drzewie aplikacji (np. jako komponent opakowujący `'use client'` w `app/providers.tsx` lub bezpośrednio w layoutcie).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📋 Wymagania główne (Must have)
 
-## Learn More
+### Krok 3: wykonaj zadanie główne i dodatkowe
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Serwerowy katalog produktów (`Server Component`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Na podstronie katalogu (np. `app/products/page.tsx`):
+  - Pobierz początkową listę produktów za pomocą natywnego `fetch()` bezpośrednio w Server Component.
+  - Skonfiguruj zapytanie serwerowe z rewalidacją czasową (np. `next: { revalidate: 60 }`) lub otaguj zapytanie: `next: { tags: ['products'] }`.
+  - Przekaż pobrane dane początkowe propsem (`initialData`) do komponentu klienckiego.
+  - ⚠️ **Ważne:** Nie używaj `cache: 'no-store'` bez konkretnego uzasadnienia.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. Kliencka lista i wyszukiwarka (`Client Component` + `useQuery`)
 
-## Deploy on Vercel
+- Stwórz komponent kliencki (`'use client'`) renderujący produkty:
+  - Użyj hooka `useQuery` z `@tanstack/react-query`.
+  - Przekaż do `useQuery` wartość `initialData` otrzymaną z serwera (użytkownik nie powinien widzieć spinnera ładowania przy pierwszym wejściu na stronę).
+  - Ustaw `staleTime` (np. `60_000` ms – 1 minuta), aby zapobiec nadmiarowemu odpytywaniu API przy powrocie do karty.
+  - Dodaj pole wyszukiwarki (input tekstowy).
+  - ⚠️ **Klucz zapytania:** Pamiętaj, aby wpisana fraza była częścią `queryKey` (np. `['products', search]`). Zmiana frazy musi skutkować wysłaniem nowego zapytania lub pobraniem z dedykowanego cache.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Dodawanie nowego produktu (`useMutation`)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Stwórz prosty formularz dodawania produktu (pola: tytuł, cena, kategoria).
+- Obsłuż dodawanie produktu za pomocą hooka `useMutation` wysyłającego request `POST` do `https://dummyjson.com/products/add`.
+- W funkcji zwrotnej `onSuccess`:
+  - Wywołaj `queryClient.invalidateQueries({ queryKey: ['products'] })`, aby poinformować React Query o konieczności odświeżenia danych.
+  - ⚠️ **Zakaz:** Nie aktualizuj ręcznie lokalnej tablicy w `useState` ani nie przeładowuj strony przez `window.location.reload()`.
+
+---
+
+## 🌟 Zadania dodatkowe (Nice to have)
+
+1. **Obsługa Suspense i błędów w Next.js:**
+   - Dodaj plik `loading.tsx` w segmencie `app/products/` z komponentem zastępczym (np. szkieletem kart produktów).
+   - Dodaj plik `error.tsx` (musi być `'use client'`) z obsługą błędu oraz przyciskiem ponownej próby (`reset()`).
+2. **Ulubione produkty (Web Storage):**
+   - Dodaj możliwość oznaczania produktów jako ulubione (np. ikona serduszka).
+   - Zgodnie z wytycznymi z wykładu dotyczącymi przechowywania danych po stronie klienta, zapisuj listę ulubionych identyfikatorów w `localStorage`.
+3. **Optymistyczna aktualizacja UI (Optimistic Updates):**
+   - Wykorzystaj callback `onMutate` w `useMutation`, aby nowy produkt pojawił się na liście natychmiast po zatwierdzeniu formularza, jeszcze przed zakończeniem żądania sieciowego.
+
+---
+
+### Krok 4: Pull Request na SWOJE repozytorium
+
+1. Zapisz i wypchnij zmiany:
+   ```bash
+   git add .
+   git commit -m "feat: complete chapter 6"
+   git push origin feat/imie-nazwisko-routing
+   ```
+2. Przejdź na GitHuba na stronę swojego forka i kliknij **Compare & pull request**.
+3. ⚠️ **BARDZO WAŻNE:** Zmień **`base repository`** (rozwijana lista po lewej stronie na górze) na **swojego forka** (`TWOJ_USERNAME/Nazwa-Repo`). Dzięki temu Pull Request otworzy się na Twoim koncie i nie zaśmieci głównego repozytorium.
+4. Podeślij link do swojego otwartego Pull Requesta na naszym kanale, abyśmy mogli sprawdzić Twoje zadanie domowe!
+
+---
