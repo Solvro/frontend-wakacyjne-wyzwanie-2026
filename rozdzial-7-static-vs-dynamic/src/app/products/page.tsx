@@ -4,7 +4,8 @@ import { ProductCard } from "@/components/product-card";
 import { ProductGrid } from "@/components/product-grid";
 import { getProducts } from "@/lib/products";
 
-// TODO: Dodaj revalidate, aby katalog korzystał z ISR.
+export const revalidate = 3600;
+
 export default function ProductsPage() {
   const products = getProducts();
 

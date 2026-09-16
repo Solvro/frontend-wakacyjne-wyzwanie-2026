@@ -1,4 +1,5 @@
 import Link from "next/link";
+export const revalidate = 3600;
 
 const routes = [
   ["/rendering-lab/static", "Statyczna"],
